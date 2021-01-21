@@ -24,8 +24,7 @@
     "@sanity/production-preview",
     "tabs",
     "asset-source-cloudinary-test",
-    "@sanity/color-input",
-    "some-generator"
+    "@sanity/color-input"
   ],
   "parts": [
     {
@@ -47,6 +46,10 @@
     {
       "implements": "part:@sanity/production-preview/resolve-production-url",
       "path": "./resolveProductionUrl.js"
+    },
+    {
+      "implements": "part:@sanity/base/document-actions/resolver",
+      "path": "resolveDocumentActions.js"
     }
   ]
 }

@@ -1159,7 +1159,8 @@
 
 "@sanity/color-input@^2.1.4":
   version "2.1.4"
-  resolved "https://registry.npmjs.org/@sanity/color-input/-/color-input-2.1.4.tgz#cabe24cd33ce0a0765aaf9a72412e23adea8be2f"
+  resolved "https://registry.yarnpkg.com/@sanity/color-input/-/color-input-2.1.4.tgz#cabe24cd33ce0a0765aaf9a72412e23adea8be2f"
+  integrity sha512-+M1xU6XsFZeBJjc8OZoQOqG1JKG7EpijpRHtvh9HDsNyopVsnGufANNYsq6bjJ/lWYZOksQJGP3eK7HYGwFa2w==
   dependencies:
     lodash "^4.17.15"
     react-color "^2.13.8"
