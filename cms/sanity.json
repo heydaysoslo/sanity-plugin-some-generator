@@ -1,0 +1,52 @@
+{
+  "root": true,
+  "api": {
+    "projectId": "fonzj6cl",
+    "dataset": "production"
+  },
+  "project": {
+    "name": "Next starter"
+  },
+  "env": {
+    "development": {
+      "api": {
+        "dataset": "production"
+      }
+    }
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/components",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "@sanity/vision",
+    "@sanity/production-preview",
+    "tabs",
+    "asset-source-cloudinary-test",
+    "@sanity/color-input",
+    "some-generator"
+  ],
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema.js"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./deskStructure.js"
+    },
+    {
+      "implements": "part:@sanity/base/brand-logo",
+      "path": "./custom/components/Logo.js"
+    },
+    {
+      "implements": "part:@sanity/base/theme/variables/override-style",
+      "path": "./custom/styles/cms.css"
+    },
+    {
+      "implements": "part:@sanity/production-preview/resolve-production-url",
+      "path": "./resolveProductionUrl.js"
+    }
+  ]
+}
