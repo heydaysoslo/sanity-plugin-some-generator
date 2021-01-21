@@ -4,6 +4,11 @@ import { createDocsList, createSingleton } from './structure/helpers'
 import blogStructure from './structure/blog.structure'
 
 import EmojiIcon from './custom/components/icons/EmojiIcon'
+import Some from './custom/components/previews/some/Some'
+
+const EyeIcon = () => <EmojiIcon small>👀</EmojiIcon>
+const EditIcon = () => <EmojiIcon small>📝</EmojiIcon>
+const SomeIcon = () => <EmojiIcon>🤳</EmojiIcon>
 
 const hiddenDocTypes = listItem =>
   ![
@@ -25,10 +30,26 @@ export default () =>
   S.list()
     .title('Content')
     .items([
-      createSingleton('some', {
-        withPreviews: false,
-        icon: () => <EmojiIcon>🤳</EmojiIcon>
-      }),
+      S.listItem()
+        .title('SoMe')
+        .icon(SomeIcon)
+        .schemaType('some')
+        .child(
+          S.documentTypeList('some')
+            .title('SoMe')
+            .child(documentId =>
+              S.document()
+                .documentId(documentId)
+                .schemaType('some')
+                .views([
+                  S.view.form().icon(EditIcon),
+                  S.view
+                    .component(Some)
+                    .icon(EyeIcon)
+                    .title('SoMe Preview')
+                ])
+            )
+        ),
       createDocsList('menu', { title: 'Navigation' }),
       createDocsList('frontpage'),
       createDocsList('page'),
